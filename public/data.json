@@ -1,0 +1,133 @@
+[
+    {
+      "postType": "Lost",
+      "thumbnail": "https://i.ibb.co.com/sQw4fss/Samsung-Galaxy-S21-Ultra-5-G-500x500.jpg",
+      "title": "Lost Mobile Phone",
+      "description": "Samsung Galaxy S21 lost on my way to office.",
+      "category": "Gadgets",
+      "location": "Banani, Dhaka",
+      "date": "2025-01-01",
+      "contactInfo": {
+        "displayName": "Md. Ahsan Ullah",
+        "email": "ahsan.ullah@gmail.com"
+      }
+    },
+    {
+      "postType": "Found",
+      "thumbnail": "https://i.ibb.co.com/VBK3Gjp/images.jpg",
+      "title": "Found National ID Card",
+      "description": "A National ID card was found near the park.",
+      "category": "Documents",
+      "location": "Dhanmondi, Dhaka",
+      "date": "2025-01-02",
+      "contactInfo": {
+        "displayName": "Farzana Rahman",
+        "email": "farzana.rahman@gmail.com"
+      }
+    },
+    {
+      "postType": "Lost",
+      "thumbnail": "https://i.ibb.co.com/fkxprzH/b61b8122a5ca3ec2fb85c36d5b62ba0f.jpg",
+      "title": "Lost School Bag",
+      "description": "Blue school bag lost on a rickshaw ride.",
+      "category": "Accessories",
+      "location": "Mirpur, Dhaka",
+      "date": "2025-01-01",
+      "contactInfo": {
+        "displayName": "Sharmin Akhter",
+        "email": "sharmin.akhter@gmail.com"
+      }
+    },
+    {
+      "postType": "Found",
+      "thumbnail": "https://i.ibb.co.com/D7pYx9s/istockphoto-633114008-612x612.jpg",
+      "title": "Found Pet Cat",
+      "description": "A white Persian cat found near a grocery store.",
+      "category": "Pets",
+      "location": "Chittagong City, Chattogram",
+      "date": "2024-12-31",
+      "contactInfo": {
+        "displayName": "Abdullah Al Noman",
+        "email": "abdullah.noman@gmail.com"
+      }
+    },
+    {
+      "postType": "Lost",
+      "thumbnail": "https://i.ibb.co.com/2nmKBP1/81-WIcy-HQ7o-L-AC-UY1100.jpg",
+      "title": "Lost Wallet",
+      "description": "Brown leather wallet lost at a shopping mall.",
+      "category": "Accessories",
+      "location": "Uttara, Dhaka",
+      "date": "2025-01-01",
+      "contactInfo": {
+        "displayName": "Mahmudul Hasan",
+        "email": "mahmudul.hasan@gmail.com"
+      }
+    },
+    {
+      "postType": "Found",
+      "thumbnail": "https://i.ibb.co.com/xsBjy06/4ae7d3b6-5d92-4be2-a515-517dc2f134d7-1000x1000-v-Zv1-OKi8-VRGj-KVr-Y5-WQW1-Px6z-I3wf9g1-NQ8-An9-Mp.webp",
+      "title": "Found Gold Ring",
+      "description": "Gold ring found near the university cafeteria.",
+      "category": "Accessories",
+      "location": "Rajshahi University, Rajshahi",
+      "date": "2024-12-30",
+      "contactInfo": {
+        "displayName": "Nasrin Jahan",
+        "email": "nasrin.jahan@gmail.com"
+      }
+    },
+    {
+      "postType": "Lost",
+      "thumbnail": "https://i.ibb.co.com/176PXBt/Passport-cover-07-17-23-891x1024.jpg",
+      "title": "Lost Passport",
+      "description": "My Bangladeshi passport went missing at the airport.",
+      "category": "Documents",
+      "location": "Hazrat Shahjalal Airport, Dhaka",
+      "date": "2025-01-02",
+      "contactInfo": {
+        "displayName": "Rashedul Islam",
+        "email": "rashedul.islam@gmail.com"
+      }
+    },
+    {
+      "postType": "Found",
+      "thumbnail": "https://i.ibb.co.com/QNGNGGS/na-TDCXAn-Xg-RBG40zy-C401-Fuapyw-H4p-WATJS5e1h4.jpg",
+      "title": "Found Bicycle",
+      "description": "A green bicycle left unattended near the school.",
+      "category": "Accessories",
+      "location": "Sylhet City, Sylhet",
+      "date": "2024-12-29",
+      "contactInfo": {
+        "displayName": "Tasnim Ahmed",
+        "email": "tasnim.ahmed@gmail.com"
+      }
+    },
+    {
+      "postType": "Lost",
+      "thumbnail": "https://i.ibb.co.com/89jn7bx/images-1.jpg",
+      "title": "Lost Pet Bird",
+      "description": "My parrot flew away near the market.",
+      "category": "Pets",
+      "location": "Khulna City, Khulna",
+      "date": "2025-01-01",
+      "contactInfo": {
+        "displayName": "Arman Chowdhury",
+        "email": "arman.chowdhury@gmail.com"
+      }
+    },
+    {
+      "postType": "Found",
+      "thumbnail": "https://i.ibb.co.com/9bRjRP3/Original-Charger-for-Samsung-i-Phone-Huawei-Xiaomi-Us-UK-EU-Plug-Phone-Charger-for-Samsung-Total-40.jpg",
+      "title": "Found Mobile Charger",
+      "description": "White Samsung mobile charger found on a bus.",
+      "category": "Gadgets",
+      "location": "Barishal City, Barishal",
+      "date": "2025-01-03",
+      "contactInfo": {
+        "displayName": "Nazia Sultana",
+        "email": "nazia.sultana@gmail.com"
+      }
+    }
+  ]
+  

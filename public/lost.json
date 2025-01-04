@@ -1,0 +1,33 @@
+[
+    {
+      "item": "Backpack",
+      "location": "Shahjalal International Airport, Dhaka, Bangladesh",
+      "category": "Accessories"
+    },
+    {
+      "item": "Smartphone (Samsung Galaxy S21)",
+      "location": "Dhanmondi, Dhaka, Bangladesh",
+      "category": "Electronics"
+    },
+    {
+      "item": "Wallet",
+      "location": "New Market, Sylhet, Bangladesh",
+      "category": "Personal Accessories"
+    },
+    {
+      "item": "Keys",
+      "location": "Chittagong Railway Station, Chittagong, Bangladesh",
+      "category": "Other"
+    },
+    {
+      "item": "Umbrella",
+      "location": "Gulshan 2, Dhaka, Bangladesh",
+      "category": "Personal Belongings"
+    },
+    {
+      "item": "Passport",
+      "location": "Hazrat Shahjalal International Airport, Dhaka, Bangladesh",
+      "category": "ID Documents"
+    }
+  ]
+  

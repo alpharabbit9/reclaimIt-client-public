@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../assets/search.png'
 import { useContext } from 'react';
 import AuthContext from '../Provider/AuthContext';
 
 const Navbar = () => {
   const { user , userLogOut } = useContext(AuthContext)
+  const navigate = useNavigate();
 
   const links = <>
     <li className='mr-3'><NavLink to={'/'}>Home</NavLink></li>
     <li className='mr-3'><NavLink to={'/addItems'}>Add Lost & Found Item</NavLink></li>
-    <li className='mr-3'><NavLink to={'/recoveredItems'}>Recovered Items</NavLink></li>
+    <li className='mr-3'><NavLink to={'/lostFoundItems'}>Recovered Items</NavLink></li>
     <li className='mr-3'><NavLink to={'/myItems'}>My Items</NavLink></li>
     
     
@@ -53,7 +54,10 @@ const Navbar = () => {
           user && user?.email ?
           <>
           <img  className='w-11 rounded-full mr-3' src={user.photoURL} alt="" />
-          <button onClick={userLogOut} className='btn'>Logout</button>
+          <button onClick={() =>{
+            userLogOut();
+            navigate('/')
+          }} className='btn'>Logout</button>
           </>
           :
           <Link to={'/login'} className="btn">Login</Link>

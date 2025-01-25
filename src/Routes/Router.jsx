@@ -3,34 +3,45 @@ import { createBrowserRouter } from 'react-router-dom';
 import Root from '../Pages/Root';
 import Home from '../Pages/Home';
 import Login from '../Pages/Login';
-import Regiser from '../Pages/Register';
 import Register from '../Pages/Register';
+
+
+import ItemDetails from '../Pages/itemDetails';
+import LostFoundItems from '../Pages/LostFoundItems ';
 import AddLostFound from '../Pages/addLostFound';
+
 
 const Router = createBrowserRouter([
     {
-        path:'/',
-        element:<Root></Root>,
-        children:[
+        path: '/',
+        element: <Root />, // Root element that contains the layout
+        children: [
             {
-                path:'/',
-                element:<Home></Home>
+                path: '/',
+                element: <Home />,
             },
             {
-                path:'login',
-                element:<Login></Login>
+                path: 'login',
+                element: <Login />,
             },
             {
-                path:'register',
-                element:<Register></Register>
+                path: 'register',
+                element: <Register />,
             },
             {
-                path:'addItems',
-                element:<AddLostFound></AddLostFound>
-            }
-        ]
-    }
-])
-    
+                path: 'addItems',
+                element: <AddLostFound></AddLostFound>
+            },
+            {
+                path: 'lostFoundItems',
+                element: <LostFoundItems></LostFoundItems> 
+            },
+            {
+                path: 'items/:id', 
+                element: <ItemDetails></ItemDetails> 
+            },
+        ],
+    },
+]);
 
 export default Router;

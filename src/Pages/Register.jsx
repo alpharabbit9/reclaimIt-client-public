@@ -3,6 +3,7 @@ import LoginAnimation from '../assets/RegisterAnimatio.json'
 import Lottie from 'lottie-react';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../Provider/AuthContext';
+import Swal from 'sweetalert2';
 
 
 
@@ -11,22 +12,22 @@ import AuthContext from '../Provider/AuthContext';
 const Register = () => {
 
     const [ErrorMessage, setErrorMessage] = useState(null);
-    const {createUser,setUser,updateUser} = useContext(AuthContext);
+    const { createUser, setUser, updateUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const HandleRegister = e =>{
+    const HandleRegister = e => {
 
         e.preventDefault();
-    
-        const form = e.target ;
+
+        const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
-    
-        console.log(name,email,photo,password)
-    
-    
+
+        console.log(name, email, photo, password)
+
+
         // createUser(email,password)
         // .then(res =>{
         //     console.log(res.user);
@@ -62,25 +63,32 @@ const Register = () => {
 
 
 
-        createUser(email,password)
-        .then(res => {
-            console.log(res.user)
-            setUser(res.user);
-            alert('user Created');
-            updateUser({displayName : name , photoURL : photo})
-            .then(() => {
-                console.log('user Updated');
-                navigate('/')
-                
+        createUser(email, password)
+            .then(res => {
+                console.log(res.user)
+                setUser(res.user);
+                // alert('user Created');
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Welcome Back",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                updateUser({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        console.log('user Updated');
+                        navigate('/')
+
+                    })
+                    .catch(error => {
+                        console.log(error.message)
+                        setErrorMessage(error.message)
+                    })
             })
-            .catch(error =>{
-                console.log(error.message)
-                setErrorMessage(error.message)
+            .catch(error => {
+                setErrorMessage(error.message);
             })
-        })
-        .catch(error =>{
-            setErrorMessage(error.message);
-        })
     }
     return (
         <div className="hero bg-[#8770FF] min-h-screen p-5">
@@ -91,7 +99,7 @@ const Register = () => {
                 </div>
                 <div className="card  w-full max-w-screen-lg shadow-2xl flex-1">
                     <form onSubmit={HandleRegister} className="card-body">
-                    <div className="form-control">
+                        <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-white">Name</span>
                             </label>
@@ -114,8 +122,8 @@ const Register = () => {
                                 <span className="label-text text-white">Password</span>
                             </label>
                             <input name='password' type="password" placeholder="password" className="input input-bordered text-black" required />
-                           
-                            <p  className='text-white mt-2'>New here ? <Link to={'/login'}>Already have an Account</Link></p>
+
+                            <p className='text-white mt-2'>New here ? <Link to={'/login'}>Already have an Account</Link></p>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>

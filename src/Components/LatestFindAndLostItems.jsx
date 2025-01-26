@@ -22,11 +22,11 @@ const LatestFindAndLostItems = () => {
 
 
     return (
-        <div className="bg-gray-100 p-5">
+        <div className=" px-16 text-white bg-[#111827]">
             <h2 className="text-3xl font-bold text-center mb-6">Latest Find & Lost Items</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {items.map((item) => (
-                    <div key={item.id} className="card bg-white shadow-md p-4 rounded-xl">
+                    <div key={item.id} className="card bg-blue-950 shadow-md p-4 rounded-xl">
                         <img
                             src={item.photo}
                             alt={item.title}
@@ -36,7 +36,7 @@ const LatestFindAndLostItems = () => {
                         <p className="text-gray-600 mb-4">{item.description.slice(0, 100)}...</p>
                         <button
                             onClick={() => handleViewDetails(item.id)}
-                            className="btn btn-primary w-full"
+                            className="btn bg-green-800 text-white w-full"
                         >
                             View Details
                         </button>

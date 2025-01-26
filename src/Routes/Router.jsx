@@ -9,6 +9,7 @@ import Register from '../Pages/Register';
 import ItemDetails from '../Pages/itemDetails';
 import LostFoundItems from '../Pages/LostFoundItems ';
 import AddLostFound from '../Pages/addLostFound';
+import MyItems from '../Pages/Manage My items/MyItems';
 
 
 const Router = createBrowserRouter([
@@ -40,6 +41,10 @@ const Router = createBrowserRouter([
                 path: 'items/:id', 
                 element: <ItemDetails></ItemDetails> 
             },
+            {
+                path:'/myItems',
+                element:<MyItems></MyItems>
+            }
         ],
     },
 ]);

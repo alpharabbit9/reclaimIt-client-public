@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import LoginAnimation from '../assets/RegisterAnimatio.json'
 import Lottie from 'lottie-react';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../Provider/AuthContext';
 import Swal from 'sweetalert2';
+import { FcGoogle } from 'react-icons/fc';
 
 
 
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2';
 const Register = () => {
 
     const [ErrorMessage, setErrorMessage] = useState(null);
-    const { createUser, setUser, updateUser } = useContext(AuthContext);
+    const { createUser, setUser, updateUser ,logInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const HandleRegister = e => {
@@ -90,6 +91,26 @@ const Register = () => {
                 setErrorMessage(error.message);
             })
     }
+
+
+    const handleGoogle = () => {
+        logInWithGoogle()
+            .then((res) => {
+                console.log(res.user);
+                setUser(res.user);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Welcome Back",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate('/');
+            })
+            .catch((error) => {
+                setErrorMessage(error.message);
+            });
+    };
     return (
         <div className="hero bg-[#8770FF] min-h-screen p-5">
             <div className="hero-content p-5 gap-16 flex justify-between  lg:flex-row-reverse">
@@ -127,6 +148,15 @@ const Register = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
+                        </div>
+                        <div className="form-control mt-4">
+                            <button
+                                type="button"
+                                onClick={handleGoogle}
+                                className="btn bg-white text-black flex items-center justify-center gap-2 w-full"
+                            >
+                                <FcGoogle /> Signup with with Google
+                            </button>
                         </div>
                     </form>
                     {

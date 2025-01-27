@@ -21,7 +21,7 @@ const ItemDetails = () => {
     useEffect(() => {
         const fetchItemDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/items/${id}`);
+                const response = await fetch(`https://y-nine-lake.vercel.app/items/${id}`);
                 const data = await response.json();
                 setItem(data);
                 setIsRecovered(data.status === "recovered");
@@ -46,14 +46,14 @@ const ItemDetails = () => {
         };
 
         try {
-            const response = await fetch(`http://localhost:5000/recoveries`, {
+            const response = await fetch(`https://y-nine-lake.vercel.app/recoveries`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(recoveryData),
             });
 
             if (response.ok) {
-                await fetch(`http://localhost:5000/items/${id}`, {
+                await fetch(`https://y-nine-lake.vercel.app/items/${id}`, {
                     method: "PATCH",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ status: "recovered" }),

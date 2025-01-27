@@ -8,7 +8,7 @@ const LostFoundItems = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await fetch('http://localhost:5000/items');
+                const response = await fetch('https://y-nine-lake.vercel.app/items');
                 const data = await response.json();
 
                 // Ensure the data is an array before setting state

@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import Swal from "sweetalert2";
 import AuthContext from "../../Provider/AuthContext";
+import UpdateItemModal from "./updateItemModal";
+
 
 const MyItems = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+    const [selectedItemId, setSelectedItemId] = useState(null); // State to store the selected item ID
     const { user } = useContext(AuthContext);
 
     const loggedInUser = {
@@ -15,7 +19,7 @@ const MyItems = () => {
         const fetchUserItems = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/user-items?userDisplayName=${loggedInUser.displayName}`
+                    `https://y-nine-lake.vercel.app/user-items?userDisplayName=${loggedInUser.displayName}`
                 );
                 const data = await response.json();
                 setItems(data);
@@ -44,7 +48,7 @@ const MyItems = () => {
             if (result.isConfirmed) {
                 try {
                     const response = await fetch(
-                        `http://localhost:5000/items/${id}`,
+                        `https://y-nine-lake.vercel.app/items/${id}`,
                         {
                             method: "DELETE",
                         }
@@ -76,6 +80,18 @@ const MyItems = () => {
         });
     };
 
+    // Function to open the modal and set the selected item ID
+    const openModal = (id) => {
+        setSelectedItemId(id);
+        setIsModalOpen(true);
+    };
+
+    // Close the modal
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedItemId(null); // Clear selected item ID
+    };
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -99,19 +115,14 @@ const MyItems = () => {
                         </thead>
                         <tbody>
                             {items.map((item) => (
-                                <tr
-                                    key={item._id}
-                                    className="border-b border-gray-700"
-                                >
+                                <tr key={item._id} className="border-b border-gray-700">
                                     <td className="p-4">{item.title}</td>
                                     <td className="p-4">{item.postType}</td>
                                     <td className="p-4">{item.location}</td>
                                     <td className="p-4 space-x-4">
                                         <button
                                             className="bg-blue-500 text-white px-3 py-1 rounded"
-                                            onClick={() =>
-                                                alert(`Update feature for ${item.title}`)
-                                            }
+                                            onClick={() => openModal(item._id)}
                                         >
                                             Update
                                         </button>
@@ -128,6 +139,14 @@ const MyItems = () => {
                     </table>
                 )}
             </div>
+
+            {/* Modal component to update item */}
+            <UpdateItemModal
+                isOpen={isModalOpen}
+                closeModal={closeModal}
+                itemId={selectedItemId}
+                fetchItems={() => { }}
+            />
         </div>
     );
 };

@@ -11,7 +11,8 @@ const Navbar = () => {
   const links = <>
     <li className='mr-3'><NavLink to={'/'}>Home</NavLink></li>
     <li className='mr-3'><NavLink to={'/addItems'}>Add Lost & Found Item</NavLink></li>
-    <li className='mr-3'><NavLink to={'/lostFoundItems'}>Recovered Items</NavLink></li>
+    <li className='mr-3'><NavLink to={'/lostFoundItems'}>Lost and Found Items</NavLink></li>
+    <li className='mr-3'><NavLink to={'/recoveredItems'}>Recovered Items</NavLink></li>
     <li className='mr-3'><NavLink to={'/myItems'}>My Items</NavLink></li>
     
     

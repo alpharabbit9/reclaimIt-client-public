@@ -10,6 +10,9 @@ import ItemDetails from '../Pages/itemDetails';
 import LostFoundItems from '../Pages/LostFoundItems ';
 import AddLostFound from '../Pages/addLostFound';
 import MyItems from '../Pages/Manage My items/MyItems';
+import AllRecoveredItems from '../Pages/AllRecoveredItems';
+import PrivateRoute from './PrivateRoute';
+
 
 
 const Router = createBrowserRouter([
@@ -35,15 +38,26 @@ const Router = createBrowserRouter([
             },
             {
                 path: 'lostFoundItems',
-                element: <LostFoundItems></LostFoundItems> 
+                element: <LostFoundItems></LostFoundItems>
             },
             {
-                path: 'items/:id', 
-                element: <ItemDetails></ItemDetails> 
+                path: 'items/:id',
+                element: <PrivateRoute>
+
+                    <ItemDetails></ItemDetails>
+                </PrivateRoute>
             },
             {
-                path:'/myItems',
-                element:<MyItems></MyItems>
+                path: '/myItems',
+                element: <PrivateRoute>
+                    <MyItems></MyItems>
+                </PrivateRoute>
+            },
+            {
+                path: 'recoveredItems',
+                element: <PrivateRoute>
+                    <AllRecoveredItems></AllRecoveredItems>
+                </PrivateRoute>
             }
         ],
     },

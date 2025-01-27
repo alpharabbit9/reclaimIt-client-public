@@ -6,7 +6,7 @@ const LatestFindAndLostItems = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch('https://y-nine-lake.vercel.app/items')
             .then((response) => response.json())
             .then((data) => {
                 const sortedItems = data.sort((a, b) => new Date(b.date) - new Date(a.date));

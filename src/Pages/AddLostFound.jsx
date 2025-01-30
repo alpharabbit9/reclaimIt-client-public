@@ -29,7 +29,7 @@ const AddLostFound = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/items', {
+            const response = await fetch('https://y-nine-lake.vercel.app/items', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
